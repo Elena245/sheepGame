@@ -8,4 +8,5 @@ import com.sheep.util.LayerUtil;
  */
 public class TestBuildLayer {
     LayerUtil.buildLayer();
+    LayerUtil.buildLayer();
 }
