@@ -3,15 +3,15 @@ package com.sheep.view;
     游戏的启动入口
  */
 
-import com.sheep.model.Brand;
+import com.sheep.model.Card;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Start extends JFrame {
 
-    private Brand brand = new Brand("剪刀");
-    private Brand background = new Brand("背景草地");
+    private Card card = new Card("剪刀");
+    private Card background = new Card("背景草地");
 
     public Start() throws HeadlessException {
         this.setTitle("羊了个羊");
@@ -21,8 +21,8 @@ public class Start extends JFrame {
         this.setLocationRelativeTo(null); //居中
         // add customised componet to current window
 //        brand.setBounds(0,0,50,50);
-        brand.setGray(true);
-        this.getContentPane().add(brand);
+        card.setGray(true);
+        this.getContentPane().add(card);
         this.setVisible(true);
         // auto refresh the thread
         autoRefresh();

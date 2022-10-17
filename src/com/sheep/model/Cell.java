@@ -6,6 +6,7 @@ package com.sheep.model;
  */
 public class Cell {
     private  Integer state = 0;
+    private Card card;
 
     public Integer getState() {
         return state;
@@ -15,13 +16,12 @@ public class Cell {
         this.state = state;
     }
 
-    public Brand getBrand() {
-        return brand;
+    public Card getCard() {
+        return card;
     }
 
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void setCard(Card card) {
+        this.card = card;
     }
 
-    private Brand brand;
 }

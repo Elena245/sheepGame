@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 /*
     Brand represents a card
  */
-public class Brand extends Component{
+public class Card extends Component{
     private String name;
 
     private Boolean isGray;
@@ -22,7 +22,7 @@ public class Brand extends Component{
     private Integer width;
     private Integer height;
 
-    public Brand(String name){
+    public Card(String name){
         this.name = name;
         this.image = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Haydon\\Desktop\\Repos\\sheep\\imgs\\刷子.png");
         this.grayImage = Toolkit.getDefaultToolkit().getImage("imgs\\"+name+"_gray.png");
@@ -39,8 +39,8 @@ public class Brand extends Component{
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("Brand.mouseClicked");
-                Brand brand = (Brand) e.getSource(); // get the current component
-                brand.getParent().remove(brand); // remove itself by utilising parent container
+                Card card = (Card) e.getSource(); // get the current component
+                card.getParent().remove(card); // remove itself by utilising parent container
 
             }
         });
