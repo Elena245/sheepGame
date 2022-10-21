@@ -10,22 +10,25 @@ import java.awt.*;
 
 public class Start extends JFrame {
 
-    private Card card = new Card("剪刀");
     private Card background = new Card("背景草地");
 
     public Start() throws HeadlessException {
+        init();
+        // auto refresh the thread
+        autoRefresh();
+    }
+
+    private void init() {
         this.setTitle("羊了个羊");
-        this.setSize(400,  800);
+        this.setSize(450,  800);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null); //居中
         // add customised componet to current window
 //        brand.setBounds(0,0,50,50);
-        card.setGray(true);
-        this.getContentPane().add(card);
+
+        this.getContentPane().add(background);
         this.setVisible(true);
-        // auto refresh the thread
-        autoRefresh();
     }
 
     private  void autoRefresh(){

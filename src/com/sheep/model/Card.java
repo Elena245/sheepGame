@@ -24,7 +24,7 @@ public class Card extends Component{
 
     public Card(String name){
         this.name = name;
-        this.image = Toolkit.getDefaultToolkit().getImage("C:\\Users\\Haydon\\Desktop\\Repos\\sheep\\imgs\\刷子.png");
+        this.image = Toolkit.getDefaultToolkit().getImage("imgs\\"+name+".png");
         this.grayImage = Toolkit.getDefaultToolkit().getImage("imgs\\"+name+"_gray.png");
 
         this.isGray = false;
@@ -110,17 +110,17 @@ public class Card extends Component{
 //        return width;
 //    }
 //
-//    public void setWidth(Integer width) {
-//        this.width = width;
-//    }
+    public void setWidth(Integer width) {
+        this.width = width;
+    }
 //
 //    @Override
 //    public int getHeight() {
 //        return height;
 //    }
 //
-//    public void setHeight(Integer height) {
-//        this.height = height;
-//    }
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
 
 }
