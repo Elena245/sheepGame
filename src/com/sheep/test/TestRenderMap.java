@@ -3,27 +3,32 @@ package com.sheep.test;
 import com.sheep.model.Card;
 import com.sheep.model.Cell;
 import com.sheep.model.Layer;
-import com.sheep.util.LayerUtil;
-import com.sheep.view.Start;
+import com.sheep.model.Map;
+import com.sheep.util.MapUtil;
 
 import javax.swing.*;
+import java.util.List;
 
-public class TestRenderLayer extends JFrame {
+public class TestRenderMap extends JFrame {
 
-    private Layer layer = LayerUtil.buildLayer(6, 6);
+    private Map map = MapUtil.build(3);
 
-    public TestRenderLayer() {
+    public TestRenderMap() {
         // 1. init window
         init();
 
-        // 2. render layer
-        renderLayer();
+        // 2. render map
+        List<Layer> list = map.getList();
+
+        for (int i = 0; i < list.size(); i++) {
+            renderLayer(list.get(i));
+        }
 
         // 3. auto refresh
         autoRefresh();
     }
 
-    private void renderLayer() {
+    private void renderLayer(Layer layer) {
         Cell[][] cells = layer.getCells();
 
         for (int row = 0; row < cells.length; row++) {
@@ -42,10 +47,12 @@ public class TestRenderLayer extends JFrame {
         this.setSize(450, 800);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null); //居中
 
         this.setLayout(null); //绝对布局
         this.setBounds(0, 0, 450, 800);
+
+        this.setLocationRelativeTo(null); //居中
+
         this.setVisible(true);
     }
 
@@ -69,7 +76,7 @@ public class TestRenderLayer extends JFrame {
     }
 
     public static void main(String[] args) {
-        new TestRenderLayer();
+        new TestRenderMap();
     }
 }
 
